@@ -19,11 +19,15 @@ public class EnterController {
 
     //映射到service层的login方法
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String loginMethod(String name,String password){
+    public String loginMethod(String name,String password,String action){
+        if(action.equals("register")){
+            return "registerView";
+        }
         UserBean userBean = userService.login(name,password);
         if (userBean!=null)
             return "success";
         else
             return "error";
     }
+
 }

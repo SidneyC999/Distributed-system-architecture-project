@@ -17,4 +17,9 @@ public class UserBean {
     public void setPassword(String password) {
         this.password = password;
     }
+//    public UserBean(int id,String name,String password){
+//        this.id = id;
+//        this.name = name;
+//        this.password = password;
+//    }
 }

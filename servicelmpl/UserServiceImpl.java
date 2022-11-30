@@ -15,4 +15,8 @@ public class UserServiceImpl implements UserService {
     public UserBean login(String name,String password){
         return userMapper.getInfo(name,password);
     }
+
+    public Boolean register(String name, String password) {
+        return userMapper.setInfo(name,password);
+    }
 }
