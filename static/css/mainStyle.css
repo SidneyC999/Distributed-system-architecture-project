@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #FFFFFF;
+}
+/*版心*/
+.w {
+    width: 1300px;
+    margin: auto;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.header {
+    position: sticky;top: 0;
+    height: 42px;
+    width: 1320px;
+    background-color: #fbfdff;
+    margin-bottom: 30px;
+    padding: 30px 0;
+    border-bottom: solid;
+    /*box-shadow: 20px 20px 10px -4px rgba(0, 0, 0, .3);*/
+}
+.logo {
+    float:left;
+    width: 198px;
+    height: 42px;
+    /*background-color: purple;*/
+}
+#logopic {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.nav {
+    margin-left: 60px;
+    float:left;
+}
+.nav ul li {
+    float: left;
+    margin: 0 15px;
+    /*border: 1px solid beige;*/
+}
+.nav ul li img {
+    float: left;
+    padding-top: 5px;
+}
+.nav ul li button {
+    float: left;
+    display: block;
+    /*height: 42px;*/
+    padding: 0 10px;
+    /*padding-right: 10px;*/
+    line-height: 42px;
+    font-size: 18px;
+    border-radius: 15px;
+
+}
+#from {
+    background-color: #c2d9e0;
+
+}
+/*#to {*/
+/*    color: #adadad;*/
+/*}*/
+.nav ul li a:hover {
+    border-bottom: 2px solid skyblue;
+}
+.search {
+    float: left;
+    width: 408px;
+    height: 42px;
+    /*background-color: skyblue;*/
+    margin-left: 50px;
+}
+.search input {
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid black;
+    border-right: 0;
+    color: #757575;
+    font-size: 14px;
+    padding-left: 15px;
+}
+.search button {
+    float: left;
+    width: 47px;
+    height: 42px;
+    background-image: url(../image/搜索.png);
+    background-repeat: no-repeat;
+    background-size: 43px 38px;
+    background-color: #badeeb;
+    /*border: 0;*/
+}
+.search button:hover{
+    background-color: #757575;
+}
+.user {
+    float: right;
+    height: 42px;
+}
+.user img {
+    max-width: 50px;
+    max-height: 41px;
+}
+.user label {
+    display: inline-block;
+    float: right;
+    /*width: 122px;*/
+    height: 30px;
+    line-height: 42px;
+}
+
+.info {
+    /*background-color: pink;*/
+    width: 1200px;
+    margin: auto;
+}
+#flight {
+    margin-right: auto;
+    margin-left: auto;
+    border-collapse: collapse;
+}
+.flightinfo {
+    height: 100px;
+    padding: 20px;
+    /*border: solid #6d66ff;*/
+    /*margin-bottom: 20px;*/
+}
+#tablehead {
+    background-color: #c2d9e0;
+}
+th {
+    /*display: inline-block;*/
+    text-align: center;
+    line-height: 50px;
+    margin: 0 29px;
+    border-bottom: 1px solid #dcdee0;
+    /*padding-left: 50px;*/
+    /*padding-right: 50px;*/
+    /*border-color: transparent;*/
+}
+.no,#firm,#checkin,#gate.state,.delay {
+    width: 100px;
+}
+.no {
+    border-left: 1px solid #dcdee0;
+}
+.delay {
+    border-right: 1px solid #dcdee0;
+}
+#actto,#actla {
+    width: 120px;
+}
+#alltime {
+    width: 330px;
+}
+
+td {
+    text-align: center;
+    border-bottom: 0.5px solid #dcdee0;
+    /*border-top: 1px solid black;*/
+    /*border-left: 10px solid;*/
+    /*border-right: 10px solid;*/
+    /*border-color: transparent;*/
+}
+.takeof,.arrow {
+    margin-right: 0;
+}
+.landing,.arrow {
+    margin-left: 0;
+}

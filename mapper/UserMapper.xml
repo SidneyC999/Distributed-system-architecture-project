@@ -9,6 +9,9 @@
 <!--        <selectKey keyProperty="id" resultType="int" order="BEFORE">-->
 <!--            select if(max(id) is null,0,max(id)+1) as newID from User-->
 <!--        </selectKey>-->
-        insert into User(name,password) values(#{name},#{password})
+        insert into User(name,password,phone) values(#{name},#{password},#{phone})
     </insert>
+    <select id="getPhInfo" parameterType="String" resultType="com.example.airportmanage.bean.UserBean">
+            SELECT * FROM user WHERE phone = #{phone}
+    </select>
 </mapper>
