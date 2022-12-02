@@ -13,10 +13,16 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     public UserBean login(String name,String password){
-        return userMapper.getInfo(name,password);
+        UserBean userBean = userMapper.getInfo(name,password);
+        System.out.println(userBean);
+        return userBean;
     }
 
-    public Boolean register(String name, String password) {
-        return userMapper.setInfo(name,password);
+    public Boolean register(String name, String password,String phone) {
+        return userMapper.setInfo(name,password,phone);
+    }
+
+    public UserBean isRegister(String phone) {
+        return userMapper.getPhInfo(phone);
     }
 }

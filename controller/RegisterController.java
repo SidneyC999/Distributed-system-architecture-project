@@ -21,12 +21,12 @@ public class RegisterController {
     @RequestMapping("/registerView")
     public String show(){return "registerView";}
 
-    //映射到service层的login方法
+    //映射到service层的register方法
     @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public String registerMethod(String name,String password,String confirmPassword){
+    public String registerMethod(String name,String password,String confirmPassword,String phone){
         if(password.equals(confirmPassword)){
 //            UserBean userBean = new UserBean(id,name,password);
-            userService.register(name,password);
+            userService.register(name,password,phone);
             return "login";
         }
         else{
@@ -34,25 +34,37 @@ public class RegisterController {
         }
     }
 
-    //ajax检测两次密码是否相同
-
-    @RequestMapping(value = "/tryRegist",method=RequestMethod.POST)
+    //ajax检测电话是否已注册
+    @RequestMapping(value = "/isRegist",method=RequestMethod.POST)
     @ResponseBody
-    public String tryRegister(@RequestBody Map map){//, HttpServletRequest request, HttpServletResponse response){
-        String flag;
-        Object pw= map.get("password");
-        Object cpw=map.get("confirmPassword");
-        if(pw==null){
-            flag= "none";
-        }
-        if(pw.equals(cpw)){
-//            UserBean userBean = new UserBean(id,name,password);
-            flag = "true";
-        }
-        else{
-            flag = "false";
-        }
-        System.out.println(flag);
-        return flag;
+    public Boolean isRegister(@RequestBody Map map){//, HttpServletRequest request, HttpServletResponse response){
+        String phone = map.get("phone").toString();
+        UserBean userBean = userService.isRegister(phone);
+//        System.out.println(userService.isRegister("7777"));
+//        System.out.println(userBean);
+        if (userBean==null) //未注册
+            return false;
+        else
+            return true;
     }
+
+//    @RequestMapping(value = "/tryRegist",method=RequestMethod.POST)
+//    @ResponseBody
+//    public String tryRegister(@RequestBody Map map){//, HttpServletRequest request, HttpServletResponse response){
+//        String flag;
+//        Object pw= map.get("password");
+//        Object cpw=map.get("confirmPassword");
+//        System.out.println("pw"+pw);
+//        System.out.println("cpw"+cpw);
+//        System.out.println("-----");
+//        if(pw.equals(cpw)){
+////            UserBean userBean = new UserBean(id,name,password);
+//            flag = "true";
+//        }
+//        else{
+//            flag = "false";
+//        }
+//        System.out.println(flag);
+//        return flag;
+//    }
 }
